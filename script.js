@@ -1,18 +1,18 @@
-const person = {
-    name: "Thakur Neupane",
-    phone: 12342345,
-    isMarried: true,
-    skills: ["html", "css", "js", "react" , ["flexbox", "grid System"]],
-    hasPet: undefined,
-    gender: null,
-    parents: {
-        f: "harry",
-        m:"merry",
-    },
-    bio: () => {
-        return "hi there"
-    },
-};
+// const person = {
+//     name: "Thakur Neupane",
+//     phone: 12342345,
+//     isMarried: true,
+//     skills: ["html", "css", "js", "react" , ["flexbox", "grid System"]],
+//     hasPet: undefined,
+//     gender: null,
+//     parents: {
+//         f: "harry",
+//         m:"merry",
+//     },
+//     bio: () => {
+//         return "hi there"
+//     },
+// };
 
 
 // Accessing first level properties
@@ -58,6 +58,69 @@ const person = {
 
 
 // Rest Method
-const { name, phone, parents, ...restOfTheProperties } = person;
-console.log(restOfTheProperties);
-console.log(person);
+// const { name, phone, parents, ...restOfTheProperties } = person;
+// console.log(restOfTheProperties);
+// console.log(person);
+
+
+// Spread Method
+// const career = {
+//     jobTitle: "Software Engineer",
+//     salary: 345678,
+// };
+// const combo = { ...person, ...career };
+// console.log(combo);
+
+
+// Shallow copy vs Deep Copy
+// old style for shallow copy
+const person = {
+    name: "Thakur Neupane",
+    phone: 12342345,
+    isMarried: true,
+    skills: ["html", "css", "js", "react" , ["flexbox", "grid System"]],
+    hasPet: undefined,
+    gender: null,
+    parents: {
+        f: "harry",
+        m:"merry",
+    },
+    bio: () => {
+        return "hi there"
+    },
+};
+
+// const p1 = Object.assign({}, person); old style
+// person.parents.m= "Shyam"
+// console.log(person);
+// console.log(p1);
+// const p1 = { ...person }
+// person.parents.m= "Shyam"
+// console.log(p1);
+// console.log(person);
+
+
+
+
+
+// deep copy
+
+// const p1 = JSON.stringify(person);
+// console.log(p1);
+// const p1 = JSON.parse(JSON.stringify(person));
+// person.parents.m="gjhk"
+// console.log(p1);
+// console.log(person);
+
+
+// Loop through objects
+// for (let key in person) {
+//     // console.log(key);
+//     console.log(key, person[key]);
+// }
+
+
+const personArg = Object.entries(person);
+// const personArg = Object.keys(person);
+// const personArg = Object.values(person);
+console.log(personArg);
